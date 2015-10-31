@@ -35,13 +35,23 @@ Released   : 20111121
     </div>
     <!-- end #header -->
     <div id="menu">
-        <ul>
-            <li class="current_page_item"><a href="#">Главная</a></li>
-            <li><a href="#">Анкета</a></li>
-            <li><a href="#">Сотруднику</a></li>
-            <li><a href="#">О нас</a></li>
-            <li><a href="#">Контакты</a></li>
-        </ul>
+        <?$APPLICATION->IncludeComponent("bitrix:menu", "top_menu", Array(
+	"COMPONENT_TEMPLATE" => ".default",
+		"ROOT_MENU_TYPE" => "top",	// Тип меню для первого уровня
+		"MENU_CACHE_TYPE" => "A",	// Тип кеширования
+		"MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
+		"MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
+		"MENU_CACHE_GET_VARS" => array(	// Значимые переменные запроса
+			0 => "",
+		),
+		"MAX_LEVEL" => "2",	// Уровень вложенности меню
+		"CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
+		"USE_EXT" => "Y",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+		"DELAY" => "N",	// Откладывать выполнение шаблона меню
+		"ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
+	),
+	false
+);?>
     </div>
     <!-- end #menu -->
     <div id="page">
