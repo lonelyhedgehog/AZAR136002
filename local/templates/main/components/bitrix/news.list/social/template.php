@@ -13,7 +13,7 @@
 $this->setFrameMode(true);
 ?>
 
-<div class="news-list">
+<div class="social">
 	<ul>
 		<?foreach($arResult["ITEMS"] as $arItem):?>
 			<li>

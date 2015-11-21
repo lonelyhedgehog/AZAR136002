@@ -1,1 +1,1 @@
-<img src="<?=SITE_TEMPLATE_PATH;?>/images/logo.gif" alt="Novux" />
+<h1>Абитуриентам</h1>

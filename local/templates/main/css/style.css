@@ -381,3 +381,27 @@ img.aligncenter {
 #footer a {
 	color: #676767;
 }
+
+/* Small Footer */
+
+.small-footer .social ul { list-style:none; margin:0px; padding:0px; }
+.small-footer .social ul li {  display:block; float:left; padding-left:10px; padding-right:5px; border-left:1px dotted #7a7a7a; margin-left:8px; }
+.small-footer .social ul li a img { margin-right:5px; }
+.small-footer .copy {
+	width:520px;
+	float:left;
+}
+.small-footer .social {
+	width:auto;
+	float:right;
+}
+.containit {
+	min-width:940px;
+	width:940px;
+	margin-left:auto;
+	margin-right:auto;
+	padding-left:10px;
+	padding-right:10px;
+}
+
+

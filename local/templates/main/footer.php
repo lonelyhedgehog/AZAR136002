@@ -11,7 +11,13 @@
 <!-- end #page -->
 </div>
 <div id="footer">
-    <p>Сделано в 2015</p>
+
+
+    <div class="small-footer">
+            <p>Сделано &copy; <?=date('Y');?> </p>
+            <div class="social">
+
+
     <?$APPLICATION->IncludeComponent(
         "bitrix:news.list",
         "social",
@@ -66,7 +72,13 @@
             "PAGER_SHOW_ALL" => "N"
         )
     );?>
+
+
+            <div class="clear"></div>
+        </div>
+    </div>
 </div>
+
 <!-- end #footer -->
 </body>
 </html>

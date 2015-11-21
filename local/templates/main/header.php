@@ -28,8 +28,31 @@ Released   : 20111121
     <div id="header-wrapper">
         <div id="header">
             <div id="logo">
-                <h1>Абитуриентам</h1>
-                <p>Поcтупайте к нам</p>
+
+                <?$APPLICATION->IncludeComponent(
+                    "bitrix:main.include",
+                    "",
+                    Array(
+                        "COMPONENT_TEMPLATE" => ".default",
+                        "AREA_FILE_SHOW" => "file",
+                        "AREA_FILE_SUFFIX" => "inc",
+                        "EDIT_TEMPLATE" => "",
+                        "PATH" => SITE_TEMPLATE_PATH."/include_areas/logo.php"
+                    )
+                );?>
+
+                <?$APPLICATION->IncludeComponent(
+                    "bitrix:main.include",
+                    "",
+                    Array(
+                        "COMPONENT_TEMPLATE" => ".default",
+                        "AREA_FILE_SHOW" => "file",
+                        "AREA_FILE_SUFFIX" => "inc",
+                        "EDIT_TEMPLATE" => "",
+                        "PATH" => SITE_TEMPLATE_PATH."/include_areas/slogan.php"
+                    )
+                );?>
+
             </div>
         </div>
     </div>
