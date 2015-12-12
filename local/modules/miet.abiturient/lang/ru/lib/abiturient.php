@@ -1,7 +1,12 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Erizo
- * Date: 21.11.2015
- * Time: 15:15
- */
+<?
+$MESS["Abiturient_ID_FIELD"] = "ID абитуриента";
+$MESS["Index"] = "Индекс";
+$MESS["Flat"] = "Квартира";
+$MESS["Birthday"] = "Дата рождения";
+$MESS["Family"] = "Фамилия";
+$MESS["Name"] = "Имя";
+$MESS["Middlename"] = "Отчество";
+$MESS["Home"] = "Дом";
+$MESS["City"] = "Город";
+$MESS["Street"] = "Улица";
+?>

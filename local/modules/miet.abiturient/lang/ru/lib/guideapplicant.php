@@ -1,7 +1,6 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Erizo
- * Date: 21.11.2015
- * Time: 15:15
- */
+<?
+$MESS["Priority"] = "Приоритет";
+$MESS["GUIDE_ID_FIELD"] = "Айди аб-та тут";
+$MESS["IDA_ID_FIELD"] = "Айди аб-та из абитуриента";
+$MESS["DIR_ID_FIELD"] = "Айди направления из инфоблока";
+?>

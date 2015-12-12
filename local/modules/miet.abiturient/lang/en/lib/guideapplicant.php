@@ -1,7 +1,6 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Erizo
- * Date: 21.11.2015
- * Time: 15:15
- */
+<?
+$MESS["Priority"] = "Priority";
+$MESS["GUIDE_ID_FIELD"] = "GUIDE_ID_FIELD";
+$MESS["IDA_ID_FIELD"] = "IDA_ID_FIELD";
+$MESS["DIR_ID_FIELD"] = "DIR_ID_FIELD";
+?>

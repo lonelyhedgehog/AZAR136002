@@ -5,5 +5,7 @@ require_once "lib/abiturient.php";
 require_once "lib/guideapplicant.php";
 require_once "lib/napr.php";
 require_once "lib/abiturientmanager.php";
-
+require_once "lib/sertificat.php";
+require_once "lib/bally.php";
+require_once "lib/guidedis.php";
 ?>

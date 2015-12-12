@@ -1,0 +1,7 @@
+<?
+$MESS["SERT_ID_FIELD"] = "SERT_ID_FIELD";
+$MESS["IDAPP"] = "IDAPP";
+$MESS["TERM"] = "TERM";
+$MESS["ISSUEDATE"] = "ISSUEDATE";
+$MESS["SERT"] = "SERT number";
+?>

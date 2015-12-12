@@ -6,7 +6,7 @@ use Bitrix\Main\Localization\Loc;
 
 Loc::loadMessages(__FILE__);
 
-class GuideTable extends Entity\DataManager {
+class BallyTable extends Entity\DataManager {
     public static function getFilePath()
     {
         return __FILE__;
@@ -15,7 +15,7 @@ class GuideTable extends Entity\DataManager {
     /*Название таблицы HL в БД*/
     public static function getTableName()
     {
-        return 'GuideApplicant';
+        return 'Discipline';
     }
 
     /*Описание полей сущности (соответсвуют полям HL DepartmentKPI)*/
@@ -26,53 +26,52 @@ class GuideTable extends Entity\DataManager {
                 'data_type' => 'integer',
                 'primary' => true,
                 'autocomplete' => true,
-                'title' => Loc::getMessage('GUIDE_ID_FIELD'),
+                'title' => Loc::getMessage('ID_FIELD'),
             ),
 
-            'UF_IDA' => array(
+            'UF_SERT' => array(
                 'data_type' => 'integer',
                 'requaried' => true,
-                'title' => Loc::getMessage('IDA_ID_FIELD'),
+                'title' => Loc::getMessage('SERT_ID_FIELD'),
             ),
 
 
-            'UF_DIR' => array(
+            'UF_DISC' => array(
                 'data_type' => 'integer',
                 'requaried' => true,
-                'title' => Loc::getMessage('DIR_ID_FIELD'),
+                'title' => Loc::getMessage('DISC_FIELD'),
             ),
 
-            'UF_PRIORITY' => array(
-                'data_type' => 'int',
+            'UF_SCORE' => array(
+                'data_type' => 'integer',
+                'requaried' => true,
                 'validation' => array(//Метод-валидатор значения
                     __CLASS__,//Имя класса метода-валидатора, в данном случае текущий класс
                     'validateValue' //Название метода-валидатора в данном классе
                 ),
-                'title' => Loc::getMessage('Priority'),
-            ),
-
-            //Cвязи
-
-            new Entity\ReferenceField(
-                'UF_IDA',
-                'miet/abiturient/AbiturientTable',
-                array('=this.UF_IDA' => 'ref.ID')
+                'title' => Loc::getMessage('SCORE_FIELD'),
             ),
 
             new Entity\ReferenceField(
-                'UF_DIR',
-                'Bitrix\Iblock\GuideDirections',
-                array('=this.UF_DIR' => 'ref.ID')
+                'UF_SERT',
+                'miet/abiturient/SertificatTable',
+                array('=this.UF_SERT' => 'ref.UF_SERT')
             ),
+
+            new Entity\ReferenceField(
+                'UF_DISC',
+                'Bitrix\Iblock\GuideDisc',
+                array('=this.UF_DISC' => 'ref.ID')
+            ),
+
 
 
         );
     }
-
     public static function validateValue()
     {
         return array(
-            new Entity\Validator\Range(0, null, false, array("MIN" => "Приоритет должен быть больше 0")),
+            new Entity\Validator\Range(0, 100, false, array("MIN" => "Балл может быть в интервале от 0 до 100")),
         );
     }
 }
