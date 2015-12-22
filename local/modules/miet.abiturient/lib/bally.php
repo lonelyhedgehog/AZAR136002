@@ -15,7 +15,7 @@ class BallyTable extends Entity\DataManager {
     /*Название таблицы HL в БД*/
     public static function getTableName()
     {
-        return 'Discipline';
+        return 'discipline';
     }
 
     /*Описание полей сущности (соответсвуют полям HL DepartmentKPI)*/
@@ -31,20 +31,20 @@ class BallyTable extends Entity\DataManager {
 
             'UF_SERT' => array(
                 'data_type' => 'integer',
-                'requaried' => true,
+                'required' => true,
                 'title' => Loc::getMessage('SERT_ID_FIELD'),
             ),
 
 
             'UF_DISC' => array(
                 'data_type' => 'integer',
-                'requaried' => true,
+                'required' => true,
                 'title' => Loc::getMessage('DISC_FIELD'),
             ),
 
             'UF_SCORE' => array(
                 'data_type' => 'integer',
-                'requaried' => true,
+                'required' => true,
                 'validation' => array(//Метод-валидатор значения
                     __CLASS__,//Имя класса метода-валидатора, в данном случае текущий класс
                     'validateValue' //Название метода-валидатора в данном классе
@@ -54,8 +54,8 @@ class BallyTable extends Entity\DataManager {
 
             new Entity\ReferenceField(
                 'UF_SERT',
-                'miet/abiturient/SertificatTable',
-                array('=this.UF_SERT' => 'ref.UF_SERT')
+                'MIET\Abiturient\SertificatTable',
+                array('=this.UF_SERT' => 'ref.ID')
             ),
 
             new Entity\ReferenceField(

@@ -15,7 +15,7 @@ class SertificatTable extends Entity\DataManager {
     /*Название таблицы HL в БД*/
     public static function getTableName()
     {
-        return 'Sertificat';
+        return 'ege';
     }
 
     /*Описание полей сущности (соответсвуют полям HL DepartmentKPI)*/
@@ -48,12 +48,12 @@ class SertificatTable extends Entity\DataManager {
                 'data_type' => 'datetime',
                 'title' => Loc::getMessage('ISSUEDATE'),
             ),
-
+/*
             new Entity\ReferenceField(
                 'UF_IDAPP',
-                'miet\abiturient\AbiturientTable',
+                'MIET\Abiturient\AbiturientTable',
                 array('=this.UF_IDAPP' => 'ref.ID')
-            ),
+            ),*/
 
 
         );

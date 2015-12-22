@@ -15,7 +15,7 @@ class AbiturientTable extends Entity\DataManager {
     /*Название таблицы HL в БД*/
     public static function getTableName()
     {
-        return 'Applicant';
+        return 'applicant';
     }
 
     /*Описание полей сущности (соответсвуют полям HL DepartmentKPI)*/

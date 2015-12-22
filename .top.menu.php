@@ -2,21 +2,21 @@
 $aMenuLinks = Array(
 	Array(
 		"Главная", 
-		"", 
+		"/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Анкета", 
-		"/anketa/", 
+		"/anketa/anketa.php", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Абитуриенту", 
-		"", 
+		"/anketa/try.php", 
 		Array(), 
 		Array(), 
 		"CBXFeatures::IsFeatureEnabled('CommonDocuments')" 

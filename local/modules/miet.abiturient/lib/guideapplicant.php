@@ -15,7 +15,7 @@ class GuideTable extends Entity\DataManager {
     /*Название таблицы HL в БД*/
     public static function getTableName()
     {
-        return 'GuideApplicant';
+        return 'guide_applicant';
     }
 
     /*Описание полей сущности (соответсвуют полям HL DepartmentKPI)*/
@@ -31,19 +31,19 @@ class GuideTable extends Entity\DataManager {
 
             'UF_IDA' => array(
                 'data_type' => 'integer',
-                'requaried' => true,
+                'required' => true,
                 'title' => Loc::getMessage('IDA_ID_FIELD'),
             ),
 
 
             'UF_DIR' => array(
                 'data_type' => 'integer',
-                'requaried' => true,
+                'required' => true,
                 'title' => Loc::getMessage('DIR_ID_FIELD'),
             ),
 
             'UF_PRIORITY' => array(
-                'data_type' => 'int',
+                'data_type' => 'integer',
                 'validation' => array(//Метод-валидатор значения
                     __CLASS__,//Имя класса метода-валидатора, в данном случае текущий класс
                     'validateValue' //Название метода-валидатора в данном классе
@@ -53,11 +53,11 @@ class GuideTable extends Entity\DataManager {
 
             //Cвязи
 
-            new Entity\ReferenceField(
+            /*new Entity\ReferenceField(
                 'UF_IDA',
-                'miet/abiturient/AbiturientTable',
+                'MIET\Abiturient\AbiturientTable',
                 array('=this.UF_IDA' => 'ref.ID')
-            ),
+            ),*/
 
             new Entity\ReferenceField(
                 'UF_DIR',

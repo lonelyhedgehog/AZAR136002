@@ -20,7 +20,6 @@ class AbiturientManager {
                 'UF_SURNAME' => $arData['UF_SURNAME'],
                 'UF_NAME' => $arData['UF_NAME'],
                 'UF_MIDDLENAME' => $arData['UF_MIDDLENAME'],
-                'UF_DATA' => $arData['UF_DATA'],
                 'UF_CITY' => $arData['UF_CITY'],
                 'UF_STREET' => $arData['UF_STREET'],
                 'UF_HOME' => $arData['UF_HOME'],
@@ -28,23 +27,23 @@ class AbiturientManager {
                 'UF_INDEX' => $arData['UF_INDEX'])
         );
 
-        if (!$result->isSuccsess()) {
+        if (!$result->isSuccess()) {
             $db->rollbackTransaction();
             Return false;
         }
-        $idAbit = $result->getID();
+        print $idAbit = $result->getId();
         //получили айди абитуриента//
 
         //сохраняем его направления]//
         foreach ($arData['Napr'] as $idNapr => $priorNapr) {
-            $result = AbitNapr::add(array(
-                'UF_APP' => $idAbit,
+            $result = GuideTable::add(array(
+                'UF_IDA' => $idAbit,
                 'UF_DIR' => $idNapr,
                 'UF_PRIORITY' => $priorNapr
             ));
         }
 
-        if (!$result->isSuccsess()) {
+        if (!$result->isSuccess()) {
             $db->rollbackTransaction();
             return false;
         }
@@ -52,28 +51,26 @@ class AbiturientManager {
         //сохраняем сертификат абитуриента//
         $result = SertificatTable::add(array(
                 'UF_IDAPP' => $idAbit,
-                'UF_SERT' => $arData['UF_SERT'],
-                'UF_ISSUEDATE' => $arData['UF_ISSUEDATE'],
-                'UF_TERM' => $arData['UF_TERM'])
+                'UF_SERT' => $arData['UF_SERT'],)
         );
 
-        if (!$result->isSuccsess()) {
+        if (!$result->isSuccess()) {
             $db->rollbackTransaction();
             return false;
         }
 
-        $idSert = $result->getID();
+        print $idSert = $result->getId();
         //получили айди сертификата//
 
         //сохраняем его баллы]//
-        foreach ($arData['Ball'] as $idBall => $scoreBall) {
-            $result = AbitBall::add(array(
-                'UF_IDCERT' => $idSert,
+        foreach ($arData['DIS'] as $idBall => $scoreBall) {
+            $result = BallyTable::add(array(
+                'UF_SERT' => $idSert,
                 'UF_DISC' => $idBall,
                 'UF_SCORE' => $scoreBall));
         }
 
-        if (!$result->isSuccsess()) {
+        if (!$result->isSuccess()) {
             $db->rollbackTransaction();
             return false;
         }
